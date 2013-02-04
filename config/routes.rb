@@ -5,6 +5,7 @@ OfficeDrinkRounds::Application.routes.draw do
 
   resources :users
 
+  root to: 'welcome#index'
 
   mount Rack::GitSha => '/sha'
 
