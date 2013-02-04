@@ -1,4 +1,7 @@
 OfficeDrinkRounds::Application.routes.draw do
+  resources :users
+
+
   mount Rack::GitSha => '/sha'
 
   # The priority is based upon order of creation:
