@@ -9,7 +9,7 @@ class UserGroupsController < ApplicationController
   end
 
   def create
-    @user_group = User.new params[:user_group]
+    @user_group = UserGroup.new params[:user_group]
     if @user_group.save
       redirect_to @user_group, notice: 'User group created'
     else
