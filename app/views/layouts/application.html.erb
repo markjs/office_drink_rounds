@@ -8,6 +8,20 @@
 </head>
 <body>
 
+<div class="authentication">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= link_to 'Log out', logout_path %>
+  <% else %>
+    <%= link_to 'Log in', login_path %> or
+    <%= link_to 'Sign up', signup_path %>
+  <% end %>
+</div>
+
+<% flash.each do |name, message| %>
+  <%= content_tag :div, message, class: "flash #{name}" %>
+<% end %>
+
 <%= yield %>
 
 </body>
