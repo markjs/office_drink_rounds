@@ -1,4 +1,5 @@
 class UserGroupsController < ApplicationController
+  before_filter :find_user_group, except: [:new, :create]
 
   def show
   end
@@ -26,4 +27,11 @@ class UserGroupsController < ApplicationController
       render 'edit'
     end
   end
+
+private
+
+  def find_user_group
+    @user_group = UserGroup.find(params[:id])
+  end
+
 end
