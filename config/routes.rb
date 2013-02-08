@@ -1,6 +1,9 @@
 OfficeDrinkRounds::Application.routes.draw do
 
-  resources :user_groups, path: 'groups'
+
+  resources :user_groups, path: 'groups' do
+    resources :invites
+  end
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
