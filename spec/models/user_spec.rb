@@ -6,6 +6,7 @@ describe User do
   it { should respond_to :email }
   it { should validate_presence_of :email }
   it { should validate_presence_of :password_digest }
+  it { should belong_to :user_group }
 
   describe "email address" do
     subject { user }
