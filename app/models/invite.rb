@@ -1,4 +1,7 @@
 class Invite < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :token
+
   attr_accessible :email
 
   validates :email, presence: true, email: true
