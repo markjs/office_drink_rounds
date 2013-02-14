@@ -12,9 +12,10 @@ end
 module OfficeDrinkRounds
   class Application < Rails::Application
     config.app_generators do |g|
-      g.test_framework :rspec, views: false, view_specs: false, helpers: false, helper_specs: false, routing_specs: false
+      g.test_framework :rspec, view_specs: false, helper_specs: false, routing_specs: false
       g.stylesheets false
       g.javascripts false
+      g.helpers false
     end
 
     # Settings in config/environments/* take precedence over those specified here.
