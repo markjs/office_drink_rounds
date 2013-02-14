@@ -4,6 +4,9 @@ class InvitesController < ApplicationController
 
   def show
     @invite = @user_group.invites.find(params[:id])
+    if request.path != user_group_invite_path(@user_group, @invite)
+      redirect_to @user_group, alert: "Invite not found"
+    end
   end
 
   def new
