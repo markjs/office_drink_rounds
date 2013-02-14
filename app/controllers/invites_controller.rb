@@ -2,6 +2,10 @@ class InvitesController < ApplicationController
 
   before_filter :find_user_group
 
+  def show
+    @invite = @user_group.invites.find(params[:id])
+  end
+
   def new
     @invite = @user_group.invites.new
   end
