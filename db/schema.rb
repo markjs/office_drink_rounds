@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130208134413) do
+ActiveRecord::Schema.define(:version => 20130214141052) do
 
   create_table "invites", :force => true do |t|
     t.integer  "inviter_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130208134413) do
     t.string   "email"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "token"
   end
 
   create_table "user_groups", :force => true do |t|
