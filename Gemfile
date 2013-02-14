@@ -18,6 +18,8 @@ gem "capistrano"
 gem "rack-git_sha"
 gem "lograge"
 
+gem 'friendly_id'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
