@@ -11,6 +11,10 @@ class Invite < ActiveRecord::Base
 
   before_save :generate_token
 
+  def deliver_invite_email
+    UserMailer.invite(self).deliver
+  end
+
   private
 
   def generate_token
