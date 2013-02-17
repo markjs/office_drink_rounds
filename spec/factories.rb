@@ -10,4 +10,8 @@ FactoryGirl.define do
     password_confirmation "foobar"
   end
 
+  factory :invite do
+    email
+  end
+
 end
