@@ -24,6 +24,20 @@ class InvitesController < ApplicationController
     end
   end
 
+  def new_user
+    @user = @user_group.users.new(email: @invite.email)
+  end
+
+  def create_user
+    @user = @user_group.users.new(params[:user])
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to @user_group, notice: 'Thanks for signing up!'
+    else
+      render 'new_user'
+    end
+  end
+
 private
 
   def find_user_group
@@ -31,6 +45,6 @@ private
   end
 
   def find_invite
-    @invite = @user_group.invites.find(params[:id])
+    @invite = @user_group.invites.find(params[:invite_id] || params[:id])
   end
 end
