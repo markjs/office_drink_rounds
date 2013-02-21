@@ -1,6 +1,5 @@
 OfficeDrinkRounds::Application.routes.draw do
 
-
   resources :user_groups, path: 'groups' do
     resources :invites do
       get 'new_user'
