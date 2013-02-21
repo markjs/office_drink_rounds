@@ -1,9 +1,9 @@
 class InvitesController < ApplicationController
 
   before_filter :find_user_group
+  before_filter :find_invite, except: [:new, :create]
 
   def show
-    @invite = @user_group.invites.find(params[:id])
     if request.path != user_group_invite_path(@user_group, @invite)
       redirect_to @user_group, alert: "Invite not found"
     end
@@ -29,4 +29,7 @@ private
     @user_group = UserGroup.find(params[:user_group_id])
   end
 
+  def find_invite
+    @invite = @user_group.invites.find(params[:id])
+  end
 end
