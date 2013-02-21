@@ -4,6 +4,7 @@ class InvitesController < ApplicationController
   before_filter :find_invite, except: [:new, :create]
 
   def show
+    # This is to stop invites being accessed by ID. Only the token is allowed.
     if request.path != user_group_invite_path(@user_group, @invite)
       redirect_to @user_group, alert: "Invite not found"
     end
