@@ -11,6 +11,10 @@ class Invite < ActiveRecord::Base
 
   before_save :generate_token
 
+  def expired?
+    created_at < 2.days.ago
+  end
+
   def deliver_invite_email
     UserMailer.invite(self).deliver
   end

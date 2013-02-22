@@ -46,7 +46,7 @@ private
 
   def find_invite
     @invite = @user_group.invites.find(params[:invite_id] || params[:id])
-    if @invite.created_at < 2.days.ago
+    if @invite.expired?
       redirect_to @user_group, alert: "Invite has expired"
     end
   end
