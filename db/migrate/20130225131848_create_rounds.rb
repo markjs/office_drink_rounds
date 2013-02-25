@@ -1,8 +1,8 @@
 class CreateRounds < ActiveRecord::Migration
   def change
     create_table :rounds do |t|
-      t.reference :user_group
-      t.reference :user
+      t.references :user_group
+      t.references :user
 
       t.timestamps
     end
