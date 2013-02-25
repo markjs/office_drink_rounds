@@ -1,13 +1,11 @@
 OfficeDrinkRounds::Application.routes.draw do
 
-  resources :rounds
-
-
   resources :user_groups, path: 'groups' do
     resources :invites do
       get 'new_user'
       post 'create_user'
     end
+    resources :rounds
   end
 
   get 'signup', to: 'users#new', as: 'signup'
