@@ -6,5 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true, email: true
 
   belongs_to :user_group
+
   has_many :invites, foreign_key: :inviter_id
+  has_many :rounds
 end
