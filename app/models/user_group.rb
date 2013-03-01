@@ -5,4 +5,5 @@ class UserGroup < ActiveRecord::Base
 
   has_many :users
   has_many :invites
+  has_many :rounds
 end

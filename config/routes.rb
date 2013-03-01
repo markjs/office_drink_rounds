@@ -5,6 +5,7 @@ OfficeDrinkRounds::Application.routes.draw do
       get 'new_user'
       post 'create_user'
     end
+    resources :rounds
   end
 
   get 'signup', to: 'users#new', as: 'signup'
